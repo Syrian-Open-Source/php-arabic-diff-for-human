@@ -1,6 +1,6 @@
 {
-    "name": "syrian-open-source/php-package-template",
-    "description": "Package description",
+    "name": "syrian-open-source/php-arabic-diff-for-human",
+    "description": "PHP Package to convert time difference to Arabic human readable string",
     "license": "MIT",
     "keywords": [
         "laravel",
@@ -8,9 +8,9 @@
     ],
     "authors": [
         {
-            "name": "Karam Mustafa",
-            "email": "karam2mustafa@gmail.com",
-            "homepage": "https://github.com/karam-mustafa",
+            "name": "Abdussalam Al-Ali",
+            "email": "alali.abdusslam@gmail.com",
+            "homepage": "https://github.com/abdussalam-alali",
             "role": "Developer"
         }
     ],
