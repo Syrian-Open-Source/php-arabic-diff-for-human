@@ -1,6 +1,6 @@
 <?php
 
-namespace SOS\PhpPackageTemplate\Tests\Feature;
+namespace SOS\ArabicDiffForHumans\Tests\Feature;
 
 use PHPUnit\Framework\TestCase;
 
