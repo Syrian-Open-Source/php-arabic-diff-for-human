@@ -1,0 +1,39 @@
+{
+    "name": "syrian-open-source/php-package-template",
+    "description": "Package description",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "syrian open source"
+    ],
+    "authors": [
+        {
+            "name": "Karam Mustafa",
+            "email": "karam2mustafa@gmail.com",
+            "homepage": "https://github.com/karam-mustafa",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.5",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "ext-dom": "*",
+        "ext-json": "*"
+    },
+    "autoload" : {
+        "psr-4": {
+            "SOS\\PhpPackageTemplate\\" : "src",
+            "SOS\\PhpPackageTemplate\\Tests\\": "src/tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
