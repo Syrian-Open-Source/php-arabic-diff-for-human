@@ -50,7 +50,7 @@ class ArabicDiffForHumans extends ArabicDiffForHumansAbstract implements ArabicD
                 $result = $this->formatResult($valueOfDifference, ...$value);
             }
         }
+
         return $result;
     }
-
 }

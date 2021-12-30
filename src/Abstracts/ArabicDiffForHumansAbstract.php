@@ -10,7 +10,6 @@ namespace SOS\ArabicDiffForHumans\Abstracts;
  */
 abstract class ArabicDiffForHumansAbstract
 {
-
     /**
      *
      *
@@ -27,22 +26,28 @@ abstract class ArabicDiffForHumansAbstract
         switch ($unit) {
             case 1:
                 $diffValue = $diff;
+
                 break;
             case 2:
                 $diffValue = $this->getMinutes($diff);
+
                 break;
             case 3:
                 $diffValue = $this->getHours($diff);
+
                 break;
             case 4:
                 $diffValue = $this->getDays($diff);
+
                 break;
             case 5:
                 $diffValue = $this->getMonths($diff);
+
                 break;
             case 6:
                 $diffValue = $this->getYears($diff);
         }
+
         return $diffValue;
     }
 

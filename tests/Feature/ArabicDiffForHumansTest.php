@@ -2,7 +2,6 @@
 
 namespace SOS\ArabicDiffForHumans\Tests\Feature;
 
-
 use PHPUnit\Framework\TestCase;
 use SOS\ArabicDiffForHumans\Classes\ArabicDiffForHumans;
 
@@ -22,8 +21,8 @@ class ArabicDiffForHumansTest extends TestCase
 
         $timeStamp = strtotime($time);
 
-        $this->assertEquals('منذ 3 سنين' , $instance->getFromDateString($time));
+        $this->assertEquals('منذ 3 سنين', $instance->getFromDateString($time));
 
-        $this->assertEquals('منذ 3 سنين' , $instance->get($timeStamp));
+        $this->assertEquals('منذ 3 سنين', $instance->get($timeStamp));
     }
 }

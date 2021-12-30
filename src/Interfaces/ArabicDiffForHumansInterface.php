@@ -4,7 +4,6 @@ namespace SOS\ArabicDiffForHumans\Interfaces;
 
 interface ArabicDiffForHumansInterface
 {
-
     /**
      * get the date from the string date object.
      *
