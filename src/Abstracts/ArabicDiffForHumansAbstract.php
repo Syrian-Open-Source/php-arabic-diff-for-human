@@ -10,16 +10,16 @@ namespace SOS\ArabicDiffForHumans\Abstracts;
  */
 abstract class ArabicDiffForHumansAbstract
 {
-
     private $toDivideBy =
         [
             1, // seconds [0]
             60, // minute [1]
-            60*60, // hours [2]
+            60 * 60, // hours [2]
             60 * 60 * 24, // days [3]
             60 * 60 * 24 * 30, // months [4]
-            60 * 60 * 24 * 365 // years [5]
+            60 * 60 * 24 * 365, // years [5]
         ];
+
     /**
      *
      *
@@ -31,8 +31,9 @@ abstract class ArabicDiffForHumansAbstract
      */
     protected function DiffValue($diff, $unit)
     {
-        echo $this->toDivideBy[$unit-1]. '\n';
-        return ( $diff / $this->toDivideBy[$unit-1]);
+        echo $this->toDivideBy[$unit - 1]. '\n';
+
+        return ($diff / $this->toDivideBy[$unit - 1]);
     }
 
     /**
@@ -58,16 +59,22 @@ abstract class ArabicDiffForHumansAbstract
      */
     protected function unit($diff)
     {
-        if ($diff < 60)
-            return 1; // seconds
-        if ($diff < 60 * 60)
-            return 2; // minutes
-        if ($diff < 24 * 60 * 60)
-            return 3; // hours
-        if ($diff < 24 * 60 * 60 * 30)
-            return 4; //days
-        if ($diff < 24 * 60 * 60 * 365)
-            return 5; // months
+        if ($diff < 60) {
+            return 1;
+        } // seconds
+        if ($diff < 60 * 60) {
+            return 2;
+        } // minutes
+        if ($diff < 24 * 60 * 60) {
+            return 3;
+        } // hours
+        if ($diff < 24 * 60 * 60 * 30) {
+            return 4;
+        } //days
+        if ($diff < 24 * 60 * 60 * 365) {
+            return 5;
+        } // months
+
         return 6; //years
     }
 
