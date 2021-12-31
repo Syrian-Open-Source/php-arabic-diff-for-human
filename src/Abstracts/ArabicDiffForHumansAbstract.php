@@ -31,8 +31,6 @@ abstract class ArabicDiffForHumansAbstract
      */
     protected function DiffValue($diff, $unit)
     {
-        echo $this->toDivideBy[$unit - 1]. '\n';
-
         return ($diff / $this->toDivideBy[$unit - 1]);
     }
 
