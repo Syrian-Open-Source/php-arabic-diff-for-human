@@ -38,11 +38,11 @@ class ArabicDiffForHumans extends ArabicDiffForHumansAbstract implements ArabicD
     public function get($timeStamp)
     {
         $diff = $this->getDifference($timeStamp);
-
+        echo $diff; echo "\n";
         $unit = $this->unit($diff);
-
+        echo $unit; echo "\n";
         $valueOfDifference = floor($this->DiffValue($diff, $unit));
-
+        echo $valueOfDifference . "\n";
         $result = "";
 
         foreach ($this->formatted as $key => $value) {

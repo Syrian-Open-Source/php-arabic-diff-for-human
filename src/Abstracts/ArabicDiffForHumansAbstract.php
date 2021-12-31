@@ -5,11 +5,21 @@ namespace SOS\ArabicDiffForHumans\Abstracts;
 /**
  * Class ArabicDiffForHumansAbstract
  *
- * @author karam mustafa
+ * @author karam mustafa, Abdussalam Al-Ali
  * @package SOS\ArabicDiffForHumans\Classes
  */
 abstract class ArabicDiffForHumansAbstract
 {
+
+    private $toDivideBy =
+        [
+            1, // seconds [0]
+            60, // minute [1]
+            60*60, // hours [2]
+            60 * 60 * 24, // days [3]
+            60 * 60 * 24 * 30, // months [4]
+            60 * 60 * 24 * 365 // years [5]
+        ];
     /**
      *
      *
@@ -17,38 +27,12 @@ abstract class ArabicDiffForHumansAbstract
      * @param $unit
      *
      * @return float|int
-     * @author karam mustafa
+     * @author Abdussalam Al-Ali
      */
     protected function DiffValue($diff, $unit)
     {
-        $diffValue = 0;
-
-        switch ($unit) {
-            case 1:
-                $diffValue = $diff;
-
-                break;
-            case 2:
-                $diffValue = $this->getMinutes($diff);
-
-                break;
-            case 3:
-                $diffValue = $this->getHours($diff);
-
-                break;
-            case 4:
-                $diffValue = $this->getDays($diff);
-
-                break;
-            case 5:
-                $diffValue = $this->getMonths($diff);
-
-                break;
-            case 6:
-                $diffValue = $this->getYears($diff);
-        }
-
-        return $diffValue;
+        echo $this->toDivideBy[$unit-1]. '\n';
+        return ( $diff / $this->toDivideBy[$unit-1]);
     }
 
     /**
@@ -70,101 +54,21 @@ abstract class ArabicDiffForHumansAbstract
      * @param $diff
      *
      * @return int
-     * @author karam mustafa
+     * @author Abdussalam Al-Ali
      */
     protected function unit($diff)
     {
-        if ($diff < 60) {
-            return 1;
-        } // seconds
-        else {
-            if ($diff < 60 * 60) {
-                return 2;
-            } // minutes
-            else {
-                if ($diff < 24 * 60 * 60) {
-                    return 3;
-                } // hours
-                else {
-                    if ($diff < 24 * 60 * 60 * 30) {
-                        return 4;
-                    } //days
-                    else {
-                        if ($diff < 24 * 60 * 60 * 365) {
-                            return 5;
-                        } // months
-                        else {
-                            return 6;
-                        }
-                    }
-                }
-            }
-        } //years
-    }
-
-    /**
-     *
-     *
-     * @param $diff
-     *
-     * @return float|int
-     * @author karam mustafa
-     */
-    protected function getMinutes($diff)
-    {
-        return $diff / 60;
-    }
-
-    /**
-     *
-     *
-     * @param $diff
-     *
-     * @return float|int
-     * @author karam mustafa
-     */
-    protected function getHours($diff)
-    {
-        return $diff / (60 * 60);
-    }
-
-    /**
-     *
-     *
-     * @param $diff
-     *
-     * @return float|int
-     * @author karam mustafa
-     */
-    protected function getDays($diff)
-    {
-        return $diff / (60 * 60 * 24);
-    }
-
-    /**
-     *
-     *
-     * @param $diff
-     *
-     * @return float|int
-     * @author karam mustafa
-     */
-    protected function getMonths($diff)
-    {
-        return $diff / (60 * 60 * 24 * 30);
-    }
-
-    /**
-     *
-     *
-     * @param $diff
-     *
-     * @return float|int
-     * @author karam mustafa
-     */
-    protected function getYears($diff)
-    {
-        return $diff / (365 * 24 * 60 * 60);
+        if ($diff < 60)
+            return 1; // seconds
+        if ($diff < 60 * 60)
+            return 2; // minutes
+        if ($diff < 24 * 60 * 60)
+            return 3; // hours
+        if ($diff < 24 * 60 * 60 * 30)
+            return 4; //days
+        if ($diff < 24 * 60 * 60 * 365)
+            return 5; // months
+        return 6; //years
     }
 
     /**
