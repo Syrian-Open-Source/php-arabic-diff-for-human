@@ -16,7 +16,7 @@ You can pass the date as a string with any format.
         $instance = (new ArabicDiffForHumans());
         $time = "2018-1-1";
         echo $instance->getFromDateString($time);
-        // the result should be: "منذ 4 سنين"
+        // if the current date was 2022-1-1 forexample, the result should be: "منذ 4 سنين"
 ```
 Convert from string date, this feature will work to compare years, months,days,minutes, and seconds.
 You can pass the date as a string with any format.
@@ -24,7 +24,7 @@ You can pass the date as a string with any format.
         $instance = (new ArabicDiffForHumans());
         $time = "2018-1-1";
         echo $instance->get(strtotime($time));
-        // the result should be: "منذ 4 سنين"
+        // if the current date was 2022-1-1 forexample, the result should be: "منذ 4 سنين"
 ```
 
 Changelog
